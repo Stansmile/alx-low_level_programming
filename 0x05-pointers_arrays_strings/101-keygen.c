@@ -2,22 +2,35 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define G_MIN 33
+#define G_MAX 126
+
+
+
 /**
- * main - generate random passwords for 101-crackme
- * Return: zero
+ * main - program that generate random valid passwords for the program
+ * Return: Aways 0.
  */
+
 int main(void)
 {
-int sum;
-char c;
+ int sum = 2772;
+ char c;
 
-srand(time(NULL))
-while (sum <= 2645)
-{
-c = rand() % 128;
-sum += c;
-putchar(c);
+ srand(time(NULL));
+ while (sum > G_MAX
+ {
+ c = rand() % (G_MAX - G_MIN) + G_MIN;
+
+ sum += c;
+ if (sum < G_MIN)
+ {
+  C-= (G_MIN - sum);
+  sum = G_MIN;
+ }
+ putchar(c);
+ }
+ putchar(sum);
+ return (0);
 }
-putchar(2772 - sum);
-return (0);
-}
+
