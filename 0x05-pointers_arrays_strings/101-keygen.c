@@ -2,35 +2,23 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define G_MIN 33
-#define G_MAX 126
-
-
-
 /**
- * main - program that generate random valid passwords for the program
- * Return: Aways 0.
+ * main - generates random valid passwords
+ * Return: 0 (on success).
  */
-
 int main(void)
 {
- int sum = 2772;
- char c;
+	int pass, sum;
 
- srand(time(NULL));
- while (sum > G_MAX
- {
- c = rand() % (G_MAX - G_MIN) + G_MIN;
+	srand(time(NULL));
+	sum = 0;
+	while (sum <= 2645)
+	{
+		pass = (rand() % 128);
+		sum += pass;
+		printf("%c", pass);
+	}
+	printf("%c", 2772 - sum);
 
- sum += c;
- if (sum < G_MIN)
- {
-  C-= (G_MIN - sum);
-  sum = G_MIN;
- }
- putchar(c);
- }
- putchar(sum);
- return (0);
+	return (0);
 }
-
